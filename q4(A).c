@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
 int main() {
     int arr[100], n;
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
+    cout << "Enter number of elements: ";
+    cin >> n;
 
-    printf("Enter elements:\n");
+    cout << "Enter elements:\n";
     for (int i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
+        cin >> arr[i];
 
     for (int i = 0; i < n / 2; i++) {
         int temp = arr[i];
@@ -14,9 +16,10 @@ int main() {
         arr[n - i - 1] = temp;
     }
 
-    printf("Reversed array: ");
+    cout << "Reversed array: ";
     for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+        cout << arr[i] << " ";
+    cout << endl;
+
     return 0;
 }
