@@ -1,27 +1,29 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
 int main() {
-    int a[10][10], r, c, i, j, sumRow, sumCol;
+    int a[10][10], r, c;
+    cout << "Enter rows and columns: ";
+    cin >> r >> c;
 
-    printf("Enter rows and columns: ");
-    scanf("%d%d", &r, &c);
+    cout << "Enter elements:\n";
+    for (int i = 0; i < r; i++)
+        for (int j = 0; j < c; j++)
+            cin >> a[i][j];
 
-    printf("Enter elements:\n");
-    for (i = 0; i < r; i++)
-        for (j = 0; j < c; j++)
-            scanf("%d", &a[i][j]);
-
-    for (i = 0; i < r; i++) {
-        sumRow = 0;
-        for (j = 0; j < c; j++)
+    for (int i = 0; i < r; i++) {
+        int sumRow = 0;
+        for (int j = 0; j < c; j++)
             sumRow += a[i][j];
-        printf("Sum of row %d = %d\n", i + 1, sumRow);
+        cout << "Sum of row " << i + 1 << " = " << sumRow << endl;
     }
 
-    for (j = 0; j < c; j++) {
-        sumCol = 0;
-        for (i = 0; i < r; i++)
+    for (int j = 0; j < c; j++) {
+        int sumCol = 0;
+        for (int i = 0; i < r; i++)
             sumCol += a[i][j];
-        printf("Sum of column %d = %d\n", j + 1, sumCol);
+        cout << "Sum of column " << j + 1 << " = " << sumCol << endl;
     }
+
     return 0;
 }
